@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI AtoZ — AI Tools & Prompts</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f6f7fb;color:#17172b}
+nav{background:#11112b;color:#fff;padding:16px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:5}
+.logo{font-size:24px;font-weight:800}
+nav a{color:#ddd;text-decoration:none;margin-left:18px;font-size:14px}
+.hero{background:linear-gradient(135deg,#17154a,#5b35c9);color:white;text-align:center;padding:70px 20px}
+.hero h1{font-size:44px;margin:0 0 12px}
+.hero p{font-size:18px;opacity:.9}
+.search{max-width:720px;margin:28px auto 10px;display:flex;background:#fff;border-radius:12px;padding:6px}
+.search input{flex:1;border:0;outline:0;padding:16px;font-size:16px;border-radius:9px}
+.search button{border:0;background:#6d42df;color:#fff;padding:0 25px;border-radius:9px;font-weight:700;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:16px}
+.chip{border:1px solid #ffffff55;background:#ffffff18;color:#fff;padding:9px 13px;border-radius:30px;cursor:pointer}
+.container{max-width:1100px;margin:auto;padding:45px 20px}
+h2{margin-bottom:8px}
+#resultInfo{color:#666;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e6e6ee;border-radius:16px;padding:22px;box-shadow:0 5px 18px #00000008}
+.card h3{margin:10px 0 8px}
+.card p{color:#666;line-height:1.5}
+.card .tag{display:inline-block;background:#eee8ff;color:#5b35c9;padding:5px 9px;border-radius:20px;font-size:12px}
+.hidden{display:none!important}
+#noResults{text-align:center;padding:35px;background:#fff;border-radius:16px;border:1px dashed #bbb;display:none}
+footer{background:#11112b;color:#bbb;text-align:center;padding:30px}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}.hero h1{font-size:34px}nav a{display:none}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.search{flex-direction:column;background:transparent;padding:0}.search input,.search button{height:52px}.search button{margin-top:8px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">AI AtoZ</div>
+  <div>
+    <a href="#tools">AI Tools</a><a href="#prompts">Prompts</a><a href="#categories">Categories</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>AI AtoZ</h1>
+  <p>One Platform, Endless AI Possibilities</p>
+  <div class="search">
+    <input id="searchInput" type="search" placeholder="Search AI tools, prompts, image, video, PDF...">
+    <button id="searchBtn">Search</button>
+  </div>
+  <div class="chips">
+    <button class="chip" data-query="image">Image Generator</button>
+    <button class="chip" data-query="chat">ChatGPT</button>
+    <button class="chip" data-query="video">Video AI</button>
+    <button class="chip" data-query="pdf">PDF Tools</button>
+    <button class="chip" data-query="writer">AI Writer</button>
+  </div>
+</section>
+
+<main class="container">
+<section id="tools">
+<h2>AI Tools</h2>
+<div id="resultInfo">Showing all tools and prompts</div>
+<div class="grid" id="cards">
+  <article class="card searchable" data-search="chat chatgpt chatbot ai assistant writing coding questions">
+    <span class="tag">Chat</span><h3>ChatGPT</h3><p>AI assistant for questions, writing, ideas and coding.</p>
+  </article>
+  <article class="card searchable" data-search="image image generator photo art ai pictures">
+    <span class="tag">Image</span><h3>Image Generator</h3><p>Create images and artwork from text prompts.</p>
+  </article>
+  <article class="card searchable" data-search="video video ai generator editing clips movie">
+    <span class="tag">Video</span><h3>Video Generator</h3><p>Create and edit AI-powered videos.</p>
+  </article>
+  <article class="card searchable" data-search="pdf pdf tools document summarize convert extract">
+    <span class="tag">PDF</span><h3>PDF Tools</h3><p>Summarize, read and work with PDF documents.</p>
+  </article>
+  <article class="card searchable" data-search="writer writing copy content blog email ai writer">
+    <span class="tag">Writing</span><h3>AI Writer</h3><p>Generate blogs, emails, captions and other content.</p>
+  </article>
+  <article class="card searchable" data-search="music song audio voice ai music generator">
+    <span class="tag">Music</span><h3>Music Generator</h3><p>Create music, songs and audio ideas with AI.</p>
+  </article>
+  <article class="card searchable" data-search="code coding developer programming assistant">
+    <span class="tag">Code</span><h3>Code Assistant</h3><p>Get help writing, explaining and debugging code.</p>
+  </article>
+  <article class="card searchable" data-search="design logo ui graphic ai design">
+    <span class="tag">Design</span><h3>Design Tools</h3><p>Explore AI tools for graphics, UI and logos.</p>
+  </article>
+  <article class="card searchable" data-search="translate translator language translation ai">
+    <span class="tag">Language</span><h3>Translator</h3><p>Translate and rewrite text in different languages.</p>
+  </article>
+</div>
+<div id="noResults">No results found. Try <b>image</b>, <b>chat</b>, <b>video</b>, <b>pdf</b>, <b>writer</b> or <b>code</b>.</div>
+</section>
+
+<section id="prompts" style="margin-top:55px">
+<h2>Popular Prompts</h2>
+<div class="grid">
+  <article class="card searchable" data-search="prompt writing blog article content"><span class="tag">Prompt</span><h3>Blog Writer Prompt</h3><p>Write a clear and engaging blog article.</p></article>
+  <article class="card searchable" data-search="prompt image photo realistic art"><span class="tag">Prompt</span><h3>Image Prompt</h3><p>Create a detailed image-generation prompt.</p></article>
+  <article class="card searchable" data-search="prompt coding code debug developer"><span class="tag">Prompt</span><h3>Coding Prompt</h3><p>Ask AI to explain or debug your code.</p></article>
+</div>
+</section>
+
+<section id="categories" style="margin-top:55px">
+<h2>Categories</h2>
+<p>Chat • Image • Video • PDF • Writing • Music • Code • Design • Translation</p>
+</section>
+</main>
+
+<footer>© 2026 AI AtoZ — AI Tools & Prompts</footer>
+
+<script>
+const input = document.getElementById('searchInput');
+const button = document.getElementById('searchBtn');
+const cards = [...document.querySelectorAll('.searchable')];
+const info = document.getElementById('resultInfo');
+const noResults = document.getElementById('noResults');
+
+function doSearch(){
+  const q = input.value.trim().toLowerCase();
+  let shown = 0;
+
+  cards.forEach(card => {
+    const text = (card.dataset.search + ' ' + card.innerText).toLowerCase();
+    const match = !q || q.split(/\s+/).every(word => text.includes(word));
+    card.classList.toggle('hidden', !match);
+    if(match) shown++;
+  });
+
+  if(!q){
+    info.textContent = 'Showing all tools and prompts';
+  }else{
+    info.textContent = shown + ' result' + (shown===1?'':'s') + ' found for "' + input.value.trim() + '"';
+  }
+  noResults.style.display = shown ? 'none' : 'block';
+}
+
+button.addEventListener('click', doSearch);
+input.addEventListener('input', doSearch);
+input.addEventListener('keydown', e => { if(e.key === 'Enter') doSearch(); });
+
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    input.value = chip.dataset.query;
+    doSearch();
+    document.getElementById('tools').scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
